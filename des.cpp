@@ -139,7 +139,7 @@ public:
             roundKeys.push_back(roundKey);
 
             // Optional: print key
-            cout << "Key " << i + 1 << ": " << roundKey << endl;
+            //cout << "Key " << i + 1 << ": " << roundKey << endl;
         }
     }
 
@@ -280,26 +280,47 @@ class DES {
     
 // Main function
 int main() {
-    // Example plaintext (64 bits)
-    string plaintext = "0001001000110100010101100111100010011010101111001101111011110001";
-    
-    // Example key (64 bits)
-    string key = "0001001100110100010101110111100110011011101111001101111111110001";
-    
-    // Generate round keys
-    KeyGenerator keygen(key);
-    keygen.generateRoundKeys(); 
-    
-    vector<string> roundKeys = keygen.getRoundKeys();
-    
-    // Create DES object
-    DES des(roundKeys);
-    
-    // Encrypt
-    string ciphertext = des.encrypt(plaintext);
-    
-    cout << "Ciphertext: " << ciphertext << endl;
-    
+    int mode;
+    cin >> mode;
+
+    if (mode == 1) {
+
+        string plaintext;
+        string key;
+
+        cin >> plaintext;
+        cin >> key;
+
+        // Zero padding for multi-block
+        while (plaintext.size() % 64 != 0) {
+            plaintext += "0";
+        }
+
+        // Generate round keys
+        KeyGenerator keygen(key);
+        keygen.generateRoundKeys();
+
+        vector<string> roundKeys = keygen.getRoundKeys();
+
+        // Create DES object
+        DES des(roundKeys);
+
+        string finalCipher = "";
+
+        // Encrypt each 64-bit block
+        for (size_t i = 0; i < plaintext.size(); i += 64) {
+
+            string block = plaintext.substr(i, 64);
+
+            string encryptedBlock = des.encrypt(block);
+
+            finalCipher += encryptedBlock;
+        }
+
+        // Final output
+        cout << finalCipher << endl;
+    }
+
     return 0;
 }
 
