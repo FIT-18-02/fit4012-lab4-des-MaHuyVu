@@ -4,7 +4,7 @@
 
 This lab implements DES and TripleDES encryption algorithms using C++.
 
-## Features Implemented
+## Approach
 
 The program supports:
 - DES encryption
@@ -14,8 +14,6 @@ The program supports:
 - Multi-block processing
 - Zero padding
 
-## DES Structure
-
 The DES implementation uses:
 - Initial Permutation
 - 16 Feistel rounds
@@ -23,15 +21,13 @@ The DES implementation uses:
 - S-Boxes
 - Final Permutation
 
-## TripleDES Structure
-
 TripleDES is implemented using:
 
 E(K3, D(K2, E(K1, P)))
 
 and the reverse process for decryption.
 
-## Test Results
+## Result
 
 The program was tested with:
 - DES sample encryption
@@ -41,3 +37,7 @@ The program was tested with:
 - Tamper negative test
 
 All major functions executed successfully.
+
+## Conclusion
+
+DES and TripleDES were implemented successfully in C++ for educational purposes.
