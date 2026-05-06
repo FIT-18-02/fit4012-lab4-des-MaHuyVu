@@ -1,0 +1,2 @@
+DES encryption test completed.
+TripleDES encryption test completed.
