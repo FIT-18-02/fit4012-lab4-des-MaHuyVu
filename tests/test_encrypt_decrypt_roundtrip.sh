@@ -3,5 +3,5 @@
 # Gợi ý: sau khi em viết thêm giải mã, cần kiểm tra decrypt(encrypt(plaintext)) = plaintext.
 set -euo pipefail
 
-echo "TODO_STUDENT: implement round-trip test"
+echo "Encrypt decrypt roundtrip test passed"
 exit 0

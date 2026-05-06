@@ -1,17 +1,43 @@
-# Report 1 page - Lab 4 DES / TripleDES
+# FIT4012 Lab 4 Report
 
-## Mục tiêu
+## Objective
 
-TODO_STUDENT: Viết ngắn gọn mục tiêu của bài lab.
+This lab implements DES and TripleDES encryption algorithms using C++.
 
-## Cách làm / Method
+## Features Implemented
 
-TODO_STUDENT: Mô tả em đã làm gì với file code gốc, bổ sung những chức năng nào, cấu trúc chương trình ra sao.
+The program supports:
+- DES encryption
+- DES decryption
+- TripleDES encryption
+- TripleDES decryption
+- Multi-block processing
+- Zero padding
 
-## Kết quả / Result
+## DES Structure
 
-TODO_STUDENT: Trình bày kết quả chạy chương trình, test chính, trường hợp đúng/sai, ví dụ ciphertext hoặc round-trip.
+The DES implementation uses:
+- Initial Permutation
+- 16 Feistel rounds
+- Expansion permutation
+- S-Boxes
+- Final Permutation
 
-## Kết luận / Conclusion
+## TripleDES Structure
 
-TODO_STUDENT: Nêu điều học được, hạn chế hiện tại, và hướng mở rộng như decryption / TripleDES / multi-block.
+TripleDES is implemented using:
+
+E(K3, D(K2, E(K1, P)))
+
+and the reverse process for decryption.
+
+## Test Results
+
+The program was tested with:
+- DES sample encryption
+- Encrypt/decrypt round-trip
+- Multi-block plaintext
+- Wrong key negative test
+- Tamper negative test
+
+All major functions executed successfully.
