@@ -149,6 +149,12 @@ public:
             }
 
             roundKeys.push_back(roundKey);
+
+
+
+            // Optional: print key
+            //cout << "Key " << i + 1 << ": " << roundKey << endl;
+
         }
     }
 
@@ -297,6 +303,7 @@ public:
         return inverse_initial_permutation(combined);
     }
 };
+
 
 // Split blocks
 vector<string> splitBlocks(string text) {
